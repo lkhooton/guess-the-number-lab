@@ -5,7 +5,12 @@ const game = {
   secretNum: null,
   play: function() {
     this.secretNum = Math.floor(Math.random() * 
-      (this.biggestNum - this.smallestNum + 1)) + this.smallestNum
+      (this.biggestNum - this.smallestNum + 1)) + this.smallestNum;
+      game.getGuess();
+      this.prevGuesses.push(this.wholeNumber);
+      if (typeof(this.wholeNumber) === 'number' && this.wholeNumber !== this.secretNum){
+        game.render();
+      }
   },
   prevGuesses: [],
   getGuess: function(){
@@ -24,3 +29,4 @@ const game = {
     }
   }
 }
+console.log(game)
