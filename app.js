@@ -28,20 +28,23 @@ const game = {
         let wholeNumber = Math.floor(Math.random() * 100)
       }
       render = function(){
-        if (this.wholenNumber === secretNum){
+        let alert;
+        if (this.wholeNumber === secretNum){
           alert (`Congrats! you guessed the number in ${game.prevGuesses.length} guesses!!
             Previous guesses: ${prevGuesses}`);
-        }else if (this.wholeNumber > this.secretNum){
+        }if (this.wholeNumber > this.secretNum){
           alert (`Your guess it too high!
           Previous guesses: ${this.prevGuesses}`);
           game.guess();
-        }else if (this.wholeNumber < this.secretNum){
-          alert(`Your guess is too low!!
+        }if (this.wholeNumber < this.secretNum){
+          alert (`Your guess is too low!!
           Previous guesses: ${this.prevGuesses}`);
           game.guess();
+          
         }
       }
     }
   }
 }
-game.play()
+
+
