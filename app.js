@@ -27,8 +27,10 @@ const game = {
       if (typeof this.wholeNumber !== 'number'){
         let wholeNumber = Math.floor(Math.random() * 100)
       }
-      render = function(){
-        let alert;
+    }
+  },
+  render: function(){
+       
         if (this.wholeNumber === secretNum){
           alert (`Congrats! you guessed the number in ${game.prevGuesses.length} guesses!!
             Previous guesses: ${prevGuesses}`);
@@ -41,10 +43,11 @@ const game = {
           Previous guesses: ${this.prevGuesses}`);
           game.guess();
           
+        
         }
-      }
     }
-  }
-}
+  
+};
+//game.play(getGuess);
 
 
