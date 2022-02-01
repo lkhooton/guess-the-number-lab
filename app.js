@@ -29,7 +29,7 @@ const game = {
       }
       if (this.wholeNumber === this.secretNum) break;//try to get while loop to stop
     } 
-  },
+  },//confused on while loops. Not sure how to end it. 
 
 
 
