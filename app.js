@@ -14,7 +14,7 @@ const game = {
       }
   },
   prevGuesses: [],
-  getGuess: function(){
+  getGuess : function(){
     while (this.playerChoice !== this.secretNum){
       let playerChoice = prompt (`Enter a guess between ${this.smallestNum} and ${this.biggestNum}.`);
       let wholeNumber = parseInt(this.playerChoice);
@@ -27,27 +27,30 @@ const game = {
       if (typeof this.wholeNumber !== 'number'){
         let wholeNumber = Math.floor(Math.random() * 100)
       }
-    }
+      if (this.wholeNumber === this.secretNum) break;//try to get while loop to stop
+    } 
   },
+
+
+
+//Trouble connecting everything together
   render: function(){
-       
-        if (this.wholeNumber === secretNum){
-          alert (`Congrats! you guessed the number in ${game.prevGuesses.length} guesses!!
+       if (this.wholeNumber === secretNum){
+          prompt (`Congrats! you guessed the number in ${game.prevGuesses.length} guesses!!
             Previous guesses: ${prevGuesses}`);
         }if (this.wholeNumber > this.secretNum){
-          alert (`Your guess it too high!
+          prompt (`Your guess it too high!
           Previous guesses: ${this.prevGuesses}`);
           game.guess();
         }if (this.wholeNumber < this.secretNum){
-          alert (`Your guess is too low!!
+          prompt (`Your guess is too low!!
           Previous guesses: ${this.prevGuesses}`);
           game.guess();
           
         
         }
-    }
-  
-};
-//game.play(getGuess);
+}
+}
+game.play()
 
 
